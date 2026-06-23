@@ -3,7 +3,6 @@ import {
   Playfair_Display,
   Inter,
   Cormorant_Garamond,
-  DM_Sans,
 } from "next/font/google";
 import "./globals.css";
 
@@ -24,13 +23,6 @@ const cormorant = Cormorant_Garamond({
 const inter = Inter({
   variable: "--font-body",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSans = DM_Sans({
-  variable: "--font-ui",
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -62,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${playfair.variable} ${cormorant.variable} ${inter.variable} ${dmSans.variable}`}
+      className={`${playfair.variable} ${cormorant.variable} ${inter.variable}`}
     >
       <body>{children}</body>
     </html>

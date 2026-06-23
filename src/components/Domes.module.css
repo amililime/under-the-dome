@@ -74,7 +74,7 @@
 .mediaImg {
   position: absolute;
   inset: 0;
-  background-image: url("https://images.unsplash.com/photo-1568084680786-a84f91d1153c?auto=format&fit=crop&w=1600&q=80");
+  background-image: url("/domes/cozy-interior.jpg");
   background-size: cover;
   background-position: center;
   filter: grayscale(0.1) contrast(1.05);

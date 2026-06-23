@@ -25,7 +25,7 @@
   --font-hero: var(--font-hero, Georgia, serif);
   --font-display: var(--font-display, Georgia, serif);
   --font-body: var(--font-body, system-ui, sans-serif);
-  --font-ui: var(--font-ui, system-ui, sans-serif);
+  --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 * {

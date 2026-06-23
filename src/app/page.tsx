@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import Experiences from "@/components/Experiences";
 import Domes from "@/components/Domes";
 import Gallery from "@/components/Gallery";
+import Nearby from "@/components/Nearby";
 import Testimonials from "@/components/Testimonials";
 import Booking from "@/components/Booking";
 import Location from "@/components/Location";
@@ -17,6 +18,7 @@ export default function Home() {
         <Experiences />
         <Domes />
         <Gallery />
+        <Nearby />
         <Testimonials />
         <Booking />
         <Location />
