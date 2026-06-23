@@ -5,9 +5,9 @@ import Image from "next/image";
 import styles from "./Hero.module.css";
 
 const STATS = [
-  { value: 5, suffix: "★", label: "Calificación de huéspedes" },
-  { value: 150, suffix: "+", label: "Estadías memorables" },
-  { value: 15, suffix: "", label: "Domos exclusivos" },
+  { value: "5", suffix: "★", label: "Calificación de huéspedes" },
+  { value: "150", suffix: "+", label: "Estadías memorables" },
+  { value: "15", suffix: "", label: "Domos exclusivos" },
 ] as const;
 
 function useReducedMotion() {
@@ -46,41 +46,6 @@ function useParallax(reduced: boolean) {
     };
   }, [reduced]);
   return ref;
-}
-
-function CountUp({
-  to,
-  suffix,
-  reduced,
-}: {
-  to: number;
-  suffix: string;
-  reduced: boolean;
-}) {
-  const [n, setN] = useState(reduced ? to : 0);
-  useEffect(() => {
-    if (reduced) {
-      setN(to);
-      return;
-    }
-    const duration = 1100;
-    const start = performance.now();
-    let raf = 0;
-    const tick = (now: number) => {
-      const t = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - t, 3);
-      setN(Math.round(eased * to));
-      if (t < 1) raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [to, reduced]);
-  return (
-    <>
-      {n}
-      {suffix && <span>{suffix}</span>}
-    </>
-  );
 }
 
 export default function Hero() {
@@ -154,7 +119,8 @@ export default function Hero() {
               style={{ animationDelay: `${940 + i * 120}ms` }}
             >
               <span className={styles.statValue}>
-                <CountUp to={s.value} suffix={s.suffix} reduced={reduced} />
+                {s.value}
+                {s.suffix && <span>{s.suffix}</span>}
               </span>
               <span className={styles.statLabel}>{s.label}</span>
             </div>
