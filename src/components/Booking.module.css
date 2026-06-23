@@ -1,0 +1,253 @@
+.section {
+  padding: 180px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.head {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 40px;
+  margin-bottom: 100px;
+  padding-top: 40px;
+  border-top: 1px solid var(--line);
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--accent);
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.eyebrow::before {
+  content: "IV";
+  font-family: var(--font-display);
+  font-style: normal;
+  font-size: 13px;
+  color: var(--fg-dim);
+  letter-spacing: 0.16em;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5.5vw, 76px);
+  letter-spacing: -0.03em;
+  max-width: 18ch;
+  line-height: 1;
+}
+
+.title em {
+  font-style: italic;
+  color: var(--fg-muted);
+}
+
+.body {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.lede {
+  color: var(--fg-muted);
+  font-size: 16px;
+  max-width: 440px;
+}
+
+.perks {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.perks li {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--fg);
+}
+
+.perks li::before {
+  content: attr(data-n);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.formCard {
+  background: transparent;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  padding-right: 24px;
+}
+
+.field:nth-child(even) {
+  padding-right: 0;
+  padding-left: 24px;
+  border-left: 1px solid var(--line);
+}
+
+.fieldFull {
+  grid-column: 1 / -1;
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  border-left: none !important;
+}
+
+.label {
+  font-size: 10px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+.input,
+.select {
+  width: 100%;
+  padding: 6px 0 4px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid transparent;
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color 0.2s ease;
+}
+
+.input:focus,
+.select:focus {
+  outline: none;
+  border-bottom-color: var(--fg);
+}
+
+.input::placeholder {
+  color: var(--fg-dim);
+}
+
+.select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%239a9a9a'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0 center;
+  padding-right: 24px;
+  cursor: pointer;
+}
+
+.select option {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.submit {
+  grid-column: 1 / -1;
+  margin-top: 32px;
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--fg);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--fg);
+  width: max-content;
+  transition:
+    gap 0.3s var(--ease),
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.submit:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  gap: 18px;
+}
+
+.submit span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+}
+
+.disclaimer {
+  grid-column: 1 / -1;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+  margin-top: 16px;
+}
+
+.sent {
+  padding: 60px 0;
+  text-align: center;
+  color: var(--fg);
+}
+
+.sent strong {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 32px;
+  color: var(--fg);
+  margin-bottom: 16px;
+}
+
+.sent a {
+  color: var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+@media (max-width: 980px) {
+  .head {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-bottom: 60px;
+  }
+  .body {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+  .form {
+    grid-template-columns: 1fr;
+  }
+  .field,
+  .field:nth-child(even) {
+    padding: 22px 0;
+    border-left: none;
+  }
+}

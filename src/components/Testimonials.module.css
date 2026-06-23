@@ -1,0 +1,84 @@
+.section {
+  padding: 180px 0;
+  position: relative;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  text-align: center;
+  position: relative;
+}
+
+.eyebrow {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 17px;
+  color: var(--accent);
+  margin-bottom: 60px;
+  display: inline-block;
+}
+
+.eyebrow::before {
+  content: "—  ";
+  color: var(--fg-dim);
+}
+
+.quote {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.6vw, 48px);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  margin-bottom: 60px;
+  font-style: italic;
+  min-height: 4em;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.authorName {
+  font-size: 13px;
+  color: var(--fg);
+  letter-spacing: 0.02em;
+}
+
+.authorMeta {
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--fg-dim);
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 48px;
+}
+
+.dot {
+  width: 24px;
+  height: 1px;
+  background: var(--line-strong);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.dotActive {
+  background: var(--fg);
+}
+
+@media (max-width: 880px) {
+  .quote {
+    min-height: 6em;
+  }
+}
